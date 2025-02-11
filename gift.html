@@ -16,19 +16,19 @@
 }
 
 :root {
-  --dark-color: #ff005c; /* Deep red-pink for background */
-  --light-color: #ff66b2; /* Light pink accent */
-  --accent-color: #ff80bf; /* Bright pink */
-  --flower-stem: #ffaad4;
-  --flower-leaf: #ff80bf;
-  --white: #fff;
+  --dark-color: #990000; /* Deep Red for background */
+  --light-color: #ff3333; /* Light red accent */
+  --accent-color: #cc0000; /* Bright Red */
+  --flower-stem: #d10000; /* Red for flower stems */
+  --flower-leaf: #ff4d4d;
+  --white: #ffe6e6; /* Light pale red */
 }
 body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
-  background-color: #1e1e2f;
+  background-color: #660000;;
   overflow: hidden;
   perspective: 1000px;
   color: white;
@@ -41,11 +41,11 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: #e4adc8; 
   font-size: 3rem;
   font-family: 'Cursive', sans-serif;
   z-index: 3;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 182, 193, 0.8);
+  color: #ff8080;
+  text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7), 0 0 25px rgba(255, 80, 80, 0.8);
   animation: float-title 5s ease-in-out infinite;
 }
 @keyframes float-title {
@@ -73,8 +73,8 @@ h1 {
   top: 0;
   width: 10px;
   height: 15px;
-  background: linear-gradient(to bottom, #e02b3d, #d57a8c);
   border-radius: 50px 50px 0 0;
+  background: linear-gradient(to bottom, #e60000, #ff4d4d);
   box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.5), 0px 0px 6px rgba(255, 0, 0, 0.3);
 }
 
@@ -115,13 +115,10 @@ h1 {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image:  radial-gradient(
-      ellipse at top,
-      transparent 0%,
-      rgba(46, 43, 69, 0.5)
-    ),
-    radial-gradient(ellipse at bottom, rgba(46, 43, 69, 0.8), rgba(69, 57, 88, 0.2)),
-    linear-gradient(90deg, rgb(69, 57, 88), rgb(46, 43, 69));
+  background-image: 
+  radial-gradient(ellipse at top, rgba(255, 255, 255, 0.2) 0%, rgba(30, 30, 30, 0.6) 80%),
+  radial-gradient(ellipse at bottom, rgba(45, 45, 45, 0.5), rgba(30, 30, 30, 0.3)),
+  linear-gradient(90deg, rgba(30, 30, 30, 0.8), rgba(45, 45, 45, 0.6));
 }
 
 .flowers {
@@ -234,9 +231,9 @@ h1 {
   width: 6.4vmin;
   height: 8.8vmin;
   border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #ffc1cc;
-  background-image: linear-gradient(to top, rgba(228, 173, 200, 0.3), #e4adc8);
-  box-shadow: inset 0 0 1.6vmin rgba(255, 255, 255, 0.5);
+  background-color: #ff3333;
+  background-image: linear-gradient(to top, rgba(255, 102, 102, 0.4), #ff4d4d);
+    box-shadow: inset 0 0 1.6vmin rgba(255, 255, 255, 0.5);
   transform-origin: bottom center;
   opacity: 0.9;
 }
@@ -259,6 +256,13 @@ h1 {
   z-index: 1;
   opacity: 0.8;
 }
+.flower__leaf--5 {
+  transform: translate(-23%, 1.4%) rotate(70deg) rotateY(65deg); /* Adjusted for symmetry */
+}
+
+.flower__leaf--6 {
+  transform: translate(-77%, 1.4%) rotate(-70deg) rotateY(65deg); /* Adjusted for symmetry */
+}
 .flower__white-circle {
   position: absolute;
   left: -2.8vmin; /* 80% of 3.5vmin */
@@ -266,9 +270,9 @@ h1 {
   width: 7.2vmin; /* 80% of 9vmin */
   height: 3.2vmin; /* 80% of 4vmin */
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ff9999;
   border: 2px solid var(--light-color);
-  background-image: radial-gradient(circle, rgba(255, 182, 193, 0.3), transparent);
+    background-image: radial-gradient(circle, rgba(200, 200, 200, 0.3), transparent);
 }
 .flower__white-circle::after {
   content: "";
@@ -284,8 +288,7 @@ h1 {
 .flower__line {
   height: 44vmin;
   width: 1.5vmin;
-  background-image:  linear-gradient(to left, rgba(255, 182, 193, 0.2), transparent, rgba(255, 255, 255, 0.2)),
-  linear-gradient(to top, transparent 10%, var(--flower-stem), #ff66b2);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.1) 10%, var(--flower-stem), rgba(255, 99, 99, 0.4)); /* Lighter gradient */
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   animation: grow-flower-tree 4s backwards;
 }
@@ -299,7 +302,7 @@ h1 {
   height: var(--h);
   border-top-right-radius: var(--h);
   border-bottom-left-radius: var(--h);
-  background-image:  linear-gradient(to top, rgba(255, 182, 193, 0.4), #ffb6c1);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 99, 99, 0.4)); /* Lighter red gradient */
 }
 .flower__line__leaf--1 {
   transform: rotate(70deg) rotateY(30deg);
@@ -307,6 +310,10 @@ h1 {
 .flower__line__leaf--2 {
   top: 45%;
   transform: rotate(70deg) rotateY(30deg);
+}
+.flower__line__leaf--1,
+.flower__line__leaf--2 {
+  background-image: linear-gradient(to top, rgba(255, 182, 193, 0.4), rgba(255, 87, 87, 0.8)); /* Smoother transition for leaves */
 }
 .flower__line__leaf--3, .flower__line__leaf--4, .flower__line__leaf--6 {
   border-top-right-radius: 0;
@@ -316,6 +323,7 @@ h1 {
   left: -460%;
   top: 12%;
   transform: rotate(-70deg) rotateY(30deg);
+  background-image: linear-gradient(to top, rgba(255, 182, 193, 0.2), rgba(255, 99, 99, 0.6));
 }
 .flower__line__leaf--4 {
   top: 40%;
@@ -336,7 +344,9 @@ h1 {
   bottom: 0vmin;
   width: 1vmin;
   height: 1vmin;
-  background-color: rgb(255, 192, 203);
+  background-color: #ff1a1a;
+  box-shadow: 0 0 10px #ff6666;
+
   border-radius: 50%;
   filter: blur(0.2vmin);
   animation: light-ans 4s linear infinite backwards;
@@ -469,6 +479,8 @@ h1 {
         <div class="flower__leaf flower__leaf--2"></div>
         <div class="flower__leaf flower__leaf--3"></div>
         <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
         <div class="flower__white-circle"></div>
       </div>
       <div class="flower__line">
@@ -487,6 +499,8 @@ h1 {
         <div class="flower__leaf flower__leaf--2"></div>
         <div class="flower__leaf flower__leaf--3"></div>
         <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
         <div class="flower__white-circle"></div>
       </div>
       <div class="flower__line">
@@ -503,6 +517,8 @@ h1 {
         <div class="flower__leaf flower__leaf--2"></div>
         <div class="flower__leaf flower__leaf--3"></div>
         <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
         <div class="flower__white-circle"></div>    
 
       </div>
